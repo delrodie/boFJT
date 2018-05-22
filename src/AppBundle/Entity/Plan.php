@@ -8,13 +8,13 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * Presentation
+ * Plan
  *
- * @ORM\Table(name="presentation")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PresentationRepository")
+ * @ORM\Table(name="plan")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PlanRepository")
  * @Vich\Uploadable
  */
-class Presentation
+class Plan
 {
     /**
      * @var int
@@ -24,6 +24,13 @@ class Presentation
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="rubrique", type="string", length=255)
+     */
+    private $rubrique;
 
     /**
      * @var string
@@ -63,7 +70,7 @@ class Presentation
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="presentation_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="plan_image", fileNameProperty="imageName", size="imageSize")
      *
      * @var File
      */
@@ -139,7 +146,7 @@ class Presentation
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setImageFile(File $image = null)
     {
@@ -178,7 +185,7 @@ class Presentation
      *
      * @param string $titre
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setTitre($titre)
     {
@@ -202,7 +209,7 @@ class Presentation
      *
      * @param string $resume
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setResume($resume)
     {
@@ -226,7 +233,7 @@ class Presentation
      *
      * @param string $contenu
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setContenu($contenu)
     {
@@ -250,7 +257,7 @@ class Presentation
      *
      * @param string $motcle
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setMotcle($motcle)
     {
@@ -274,7 +281,7 @@ class Presentation
      *
      * @param boolean $statut
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setStatut($statut)
     {
@@ -286,7 +293,7 @@ class Presentation
     /**
      * Get statut
      *
-     * @return bool
+     * @return boolean
      */
     public function getStatut()
     {
@@ -298,7 +305,7 @@ class Presentation
      *
      * @param string $imageName
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setImageName($imageName)
     {
@@ -322,7 +329,7 @@ class Presentation
      *
      * @param integer $imageSize
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setImageSize($imageSize)
     {
@@ -346,7 +353,7 @@ class Presentation
      *
      * @param \DateTime $updatedAt
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -370,7 +377,7 @@ class Presentation
      *
      * @param string $slug
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setSlug($slug)
     {
@@ -394,7 +401,7 @@ class Presentation
      *
      * @param string $publiePar
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setPubliePar($publiePar)
     {
@@ -418,7 +425,7 @@ class Presentation
      *
      * @param string $modifiePar
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setModifiePar($modifiePar)
     {
@@ -442,7 +449,7 @@ class Presentation
      *
      * @param \DateTime $publieLe
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setPublieLe($publieLe)
     {
@@ -466,7 +473,7 @@ class Presentation
      *
      * @param \DateTime $modifieLe
      *
-     * @return Presentation
+     * @return Plan
      */
     public function setModifieLe($modifieLe)
     {
@@ -483,5 +490,29 @@ class Presentation
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+
+    /**
+     * Set rubrique
+     *
+     * @param string $rubrique
+     *
+     * @return Plan
+     */
+    public function setRubrique($rubrique)
+    {
+        $this->rubrique = $rubrique;
+
+        return $this;
+    }
+
+    /**
+     * Get rubrique
+     *
+     * @return string
+     */
+    public function getRubrique()
+    {
+        return $this->rubrique;
     }
 }

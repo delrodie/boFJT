@@ -1,0 +1,63 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ plan.titre }}{% endblock %}
+
+{% block body %}
+    <main class="main-content">
+        <div class="page-title">
+            <h4 class="mb-0"> Gestion des plans
+                <small></small>
+            </h4>
+            <ol class="breadcrumb mb-0 pl-0 pt-1 pb-0">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}" class="default-color">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}" class="default-color">{{ plan.titre }}</a></li>
+                <li class="breadcrumb-item active">plan</li>
+            </ol>
+        </div>
+
+        <div class="container-fluid">
+
+
+            <div class="row mt-5 mb-3">
+                <div class="col-md-12 ">
+                    <h5 class=" ">Fondation</h5>
+                    <p>{{ plan.titre }}</p>
+                </div>
+            </div>
+
+            <div class="card-deck">
+                <div class="card mb-9">
+                    <img src="{{ vich_uploader_asset(plan, 'imageFile') }}" alt="{{ plan.titre }}" title="{{ plan.titre }}"  class="card-img-top img-fluid"/>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">
+                            {{ plan.contenu|raw }}
+                        </p>
+                        <a href="{{ path('backend_plan_edit', {'slug': plan.slug}) }}" class="btn btn-outline-danger"><i class="fa fa-edit"></i> Modifier</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fa fa-eye"></i> Aperçu visiteur</a>
+                        <a href="{{ path('backend_plan_index') }}" class="btn btn-outline-secondary"><i class="fa fa-list"></i> Liste des plans</a>
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-sm-offset-8 ml-auto">
+                                {{ form_start(delete_form, {'attr': {'onsubmit': "return confirm('Etes-vous sûr de vouloir vraiment supprimer cet plan?');"}}) }}
+                                <input type="submit" value="Supprimer" class="btn btn-danger">
+                                {{ form_end(delete_form) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            MOTS CLES :
+                            {% for tag in plan.motcle|split(',') %}
+                                <a href="#" class="btn-sm btn-outline-secondary">#{{ tag }}</a>
+                            {% endfor %}
+
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
+
+

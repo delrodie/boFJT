@@ -1,0 +1,53 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}Liste des plans{% endblock %}
+
+{% block body %}
+    <main class="main-content">
+        <div class="page-title">
+            <h4 class="mb-0"> Gestion des plans
+                <small></small>
+            </h4>
+            <ol class="breadcrumb mb-0 pl-0 pt-1 pb-0">
+                <li class="breadcrumb-item"><a href="#" class="default-color">Accueil</a></li>
+                <li class="breadcrumb-item active">liste des plans</li>
+            </ol>
+        </div>
+
+        <div class="container-fluid">
+
+
+            <div class="row mt-5 mb-3">
+                <div class="col-md-12 text-right">
+                    <a href="{{ path('backend_plan_new') }}" class="btn  btn-light"><i class="fa fa-plus"></i> Ajouter un article du plan d'action</a>
+                </div>
+                <br>
+            </div>
+
+            <div class="card-deck">
+                {% for plan in plans %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card mb-4">
+                            <img src="{{ vich_uploader_asset(plan, 'imageFile') }}" alt="{{ plan.titre }}" title="{{ plan.titre }}"  class="card-img-top img-fluid"/>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ plan.titre }}</h5>
+                                <p class="card-text">{{ plan.resume|raw }}</p>
+                                <a href="#" class="btn btn-outline-danger">Apperçu</a>
+                                <a href="{{ path('backend_plan_show', {'slug': plan.slug}) }}" class="btn btn-outline-primary">> Lire la suite</a>
+                                {% if (plan.statut) %}
+                                    <a href="#" class="btn btn-success" title="Actif"><i class="fa fa-check-square-o"></i> </a>
+                                {% else %}
+                                    <a href="#" class="btn btn-danger" title="Desactivé"><i class="fa fa-chain-broken"></i> </a>
+                                {% endif %}
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Publié le {{ plan.publieLe|date('d-m-Y H:i:s') }} par {{ plan.publiePar }}</small>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
