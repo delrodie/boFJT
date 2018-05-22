@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="MHS">
+
+    <link rel="icon" type="image/png" href="backend/img/favicon.html">
+
+    <title>{% block title %} Allo Immo{% endblock %}</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+
+    <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/vendor/themify-icons/css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/vendor/weather-icons/css/weather-icons.min.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('backend/css/main.min.css') }}" rel="stylesheet">
+</head>
+<body class="signin-gray-bg signin-body-background">
+
+<!--===========login start===========-->
+
+<div class="container">
+    <div>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+            <a href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+        {% endif %}
+    </div>
+
+    {% if app.request.hasPreviousSession %}
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+    <div>
+        {% block fos_user_content %}
+        {% endblock fos_user_content %}
+    </div>
+
+
+</div>
+<!--===========login end===========-->
+
+
+<script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('backend/vendor/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('backend/vendor/popper.min.js') }}"></script>
+<script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('backend/vendor/jquery-ui-touch/jquery.ui.touch-punch-improved.js') }}"></script>
+<script src="{{ asset('backend/vendor/jquery.scrollTo.min.js') }}"></script>
+
+<script src="{{ asset('backend/js/jquery.validate.js') }}"></script>
+<script src="{{ asset('backend/vendor/signin-form-init.js') }}"></script>
+
+
+</body>
+
+</html>
+
+

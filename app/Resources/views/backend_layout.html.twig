@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Delrodie AMOIKON">
+
+    <!--favicon icon-->
+    <link rel="icon" type="image/png" href="{{ asset('frontend/img/logo_mini.png') }}">
+
+    <title>
+        {% block title %}
+            ALLOIMMO : Tableau de bord
+        {% endblock %}
+    </title>
+
+    <!--google font-->
+    {% block stylesheets %}
+        <link href="http://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+        <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/lobicard/css/lobicard.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/themify-icons/css/themify-icons.css') }}" rel="stylesheet">
+        <link href="{{ asset('backend/vendor/weather-icons/css/weather-icons.min.css') }}" rel="stylesheet">
+
+        <link href="{{ asset('backend/css/main.min.css') }}" rel="stylesheet">
+    {% endblock %}
+
+</head>
+<body class="app header-fixed left-sidebar-light left-sidebar-fixed right-sidebar-fixed right-sidebar-overlay right-sidebar-hidden">
+
+<header class="app-header navbar bg-dark text-light">
+
+    <div class="navbar-brand bg-dark">
+        <a class="" href="#">
+            <img src="{{ asset('frontend/img/logo_white.png') }}" alt="Logo" width="110">
+        </a>
+    </div>
+
+    <ul class="nav navbar-nav mr-auto">
+        <li class="nav-item d-lg-none">
+            <button class="navbar-toggler mobile-leftside-toggler" type="button"><i class="ti-align-right"></i></button>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link navbar-toggler left-sidebar-toggler" href="#"><i class=" ti-align-right"></i></a>
+        </li>
+    </ul>
+
+    <ul class="nav navbar-nav ml-auto">
+
+        <li class="nav-item dropdown dropdown-slide">
+            <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                <img src="{{ asset('backend/img/user1.png') }}" alt="">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-accout">
+                <div class="dropdown-header pb-3">
+                    <div class="media d-user">
+                        <img class="align-self-center mr-3" src="{{ asset('backend/img/user1.png') }}" alt="">
+                        <div class="media-body">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                <h5 class="mt-0 mb-0">{{ app.user.username|title }}</h5>
+                                <!--<span>email</span>-->
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <a class="dropdown-item" href="#"><i class=" ti-user"></i> Modififer le mot de passe</a>
+
+                <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}"><i class=" ti-unlock"></i> Deconnexion</a>
+
+            </div>
+        </li>
+
+        <li class="nav-item d-lg-none">
+            <button class="navbar-toggler mobile-rightside-toggler" type="button"><i class="icon-options-vertical"></i></button>
+        </li>
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link navbar-toggler right-sidebar-toggler" href="#"><i class="icon-options-vertical"></i></a>
+        </li>
+    </ul>
+
+    <!--right side nav end-->
+</header>
+<!--===========header end===========-->
+
+<!--===========app body start===========-->
+<div class="app-body">
+
+    <!--left sidebar start-->
+    <div class="left-sidebar">
+        <nav class="sidebar-menu">
+            <ul id="nav-accordion">
+                <li class="sub-menu">
+                    <a href="javascript:;" class="active">
+                        <i class=" ti-home"></i>
+                        <span>Tableau de bord</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a  href="#">Statistiques</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-title">
+                    <h5 class="text-uppercase">Rubriques</h5>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class=" ti-layers"></i>
+                        <span>Actualités</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a  href="{{ path('backend_article_index') }}">Publication</a></li>
+                        <li><a  href="{{ path('backend_faq_index') }}">FAQ</a></li>
+                        <li><a  href="{{ path('backend_slider_index') }}">Slider</a></li>
+                        <li><a  href="{{ path('backend_publicite_index') }}">Publicite</a></li>
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class=" ti-layers"></i>
+                        <span>Immobilier</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a  href="{{ path('backend_bien_index') }}">Bien</a></li>
+                        <li><a  href="{{ path('admin_zone_index') }}">Zone</a></li>
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class=" ti-settings"></i>
+                        <span>Parametrage</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a  href="{{ path('backend_mode_index') }}">Mode</a></li>
+                        <li><a  href="{{ path('backend_service_index') }}">Service</a></li>
+                        <li><a  href="{{ path('backend_domaine_index') }}">Domaine</a></li>
+                        <li><a  href="{{ path('admin_typebien_index') }}">Type de Bien</a></li>
+                        <li><a  href="{{ path('backend_rubrique_index') }}">Rubrique</a></li>
+                        <li><a  href="{{ path('backend_partenaire_index') }}">Partenaire</a></li>
+                    </ul>
+                </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class=" ti-lock"></i>
+                        <span>Sécurité</span>
+                    </a>
+                    <ul class="sub">
+                        <li><a  href="#">Utilisateur</a></li>
+                        <li><a  href="#">Gestionnaire</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+    <!--left sidebar end-->
+
+    <!--main contents start-->
+    {% block body %}
+        
+    {% endblock %}
+
+    <!--main contents end-->
+
+</div>
+<!--===========app body end===========-->
+
+<!--===========footer start===========-->
+<footer class="app-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-8">
+                2018 © Alloimmo
+            </div>
+            <div class="col-4">
+                <a href="#" class="float-right back-top">
+                    <i class=" ti-arrow-circle-up"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--===========footer end===========-->
+
+
+{% block javascripts %}
+    <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('backend/vendor/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('backend/vendor/popper.min.js') }}"></script>
+    <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('backend/vendor/jquery-ui-touch/jquery.ui.touch-punch-improved.js') }}"></script>
+    <script src="{{ asset('backend/vendor/lobicard/js/lobicard.js') }}"></script>
+    <script class="include" type="text/javascript" src="{{ asset('backend/vendor/jquery.dcjqaccordion.2.7.js') }}"></script>
+    <script src="{{ asset('backend/vendor/jquery.scrollTo.min.js') }}"></script>
+
+    <!--init scripts-->
+    <script src="{{ asset('backend/js/scripts.min.js') }}"></script>
+{% endblock %}
+
+
+</body>
+
+</html>
