@@ -1,0 +1,63 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ presentation.titre }}{% endblock %}
+
+{% block body %}
+    <main class="main-content">
+        <div class="page-title">
+            <h4 class="mb-0"> Gestion des presentations
+                <small></small>
+            </h4>
+            <ol class="breadcrumb mb-0 pl-0 pt-1 pb-0">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}" class="default-color">Accueil</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}" class="default-color">{{ presentation.titre }}</a></li>
+                <li class="breadcrumb-item active">presentation</li>
+            </ol>
+        </div>
+
+        <div class="container-fluid">
+
+
+            <div class="row mt-5 mb-3">
+                <div class="col-md-12 ">
+                    <h5 class=" ">Fondation</h5>
+                    <p>{{ presentation.titre }}</p>
+                </div>
+            </div>
+
+            <div class="card-deck">
+                <div class="card mb-9">
+                    <img src="{{ vich_uploader_asset(presentation, 'imageFile') }}" alt="{{ presentation.titre }}" title="{{ presentation.titre }}"  class="card-img-top img-fluid"/>
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">
+                            {{ presentation.contenu|raw }}
+                        </p>
+                        <a href="{{ path('backend_presentation_edit', {'slug': presentation.slug}) }}" class="btn btn-outline-danger"><i class="fa fa-edit"></i> Modifier</a>
+                        <a href="#" class="btn btn-outline-primary"><i class="fa fa-eye"></i> Aperçu visiteur</a>
+                        <a href="{{ path('backend_presentation_index') }}" class="btn btn-outline-secondary"><i class="fa fa-list"></i> Liste des presentations</a>
+                        <div class="form-group row">
+                            <div class="col-sm-3 col-sm-offset-8 ml-auto">
+                                {{ form_start(delete_form, {'attr': {'onsubmit': "return confirm('Etes-vous sûr de vouloir vraiment supprimer cet presentation?');"}}) }}
+                                <input type="submit" value="Supprimer" class="btn btn-danger">
+                                {{ form_end(delete_form) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            MOTS CLES :
+                            {% for tag in presentation.motcle|split(',') %}
+                                <a href="#" class="btn-sm btn-outline-secondary">#{{ tag }}</a>
+                            {% endfor %}
+
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
+
+
