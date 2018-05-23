@@ -1,0 +1,74 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}Modification des sliders{% endblock %}
+
+{% block body %}
+    <div class="main-content">
+        <div class="page-title">
+            <h4 class="mb-0">
+                Gestion des sliders
+                <small> </small>
+            </h4>
+            <ol class="breadcrumb mb-0 pl-0 pt-1 pb-0">
+                <li class="breadcrumb-item"><a href="{{ path('homepage') }}" class="default-color">Accueil</a></li>
+                <li class="breadcrumb-item active">Modification des sliders</li>
+            </ol>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <a href="{{ path('backend_slider_index') }}" class="btn  btn-light"><i class="fa fa-list"></i> Liste des sliders</a>
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <div class="card card-shadow mb-4">
+                        <div class="card-header">
+                            <div class="card-title">
+                                Modification des sliders
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {{ form_start(edit_form, {'attr': {'class': 'right-text-label-form', 'id':'signupForm'}}) }}
+
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label" for="titre">Titre</label>
+                                <div class="col-sm-8">
+                                    {{ form_widget(edit_form.titre) }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label" for="titre">Description</label>
+                                <div class="col-sm-8">
+                                    {{ form_widget(edit_form.description) }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 control-label" for="tags">Photo d'illustration</label>
+                                <div class="col-sm-8">
+                                    {{ form_widget(edit_form.imageFile) }}
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-5 col-sm-offset-4">.</div>
+                                <label class="custom-control custom-checkbox">
+                                    {{ form_widget(edit_form.statut) }}
+                                    <span class="custom-control-indicator"></span>
+                                    <span class="custom-control-description">Statut</span>
+                                </label>
+                            </div>
+                            {{ form_rest(edit_form) }}
+                            <div class="form-group row">
+                                <div class="col-sm-5 ml-auto">
+                                    <button class="btn btn-primary" name="signup">Modification</button>
+                                </div>
+                            </div>
+                            {{ form_end(edit_form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

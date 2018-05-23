@@ -1,0 +1,51 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}Liste des sliders{% endblock %}
+
+{% block body %}
+    <main class="main-content">
+        <div class="page-title">
+            <h4 class="mb-0"> Gestion des sliders
+                <small></small>
+            </h4>
+            <ol class="breadcrumb mb-0 pl-0 pt-1 pb-0">
+                <li class="breadcrumb-item"><a href="#" class="default-color">Accueil</a></li>
+                <li class="breadcrumb-item active">liste des sliders</li>
+            </ol>
+        </div>
+
+        <div class="container-fluid">
+
+
+            <div class="row mt-5 mb-3">
+                <div class="col-md-12 text-right">
+                    <a href="{{ path('backend_slider_new') }}" class="btn  btn-light"><i class="fa fa-plus"></i> Ajouter un slider</a>
+                </div>
+                <br>
+            </div>
+
+            <div class="card-deck">
+                {% for slider in sliders %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card mb-4">
+                            <img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="{{ slider.titre }}" title="{{ slider.titre }}"  class="card-img-top img-fluid"/>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ slider.titre }}</h5>
+                                <a href="{{ path('backend_slider_show', {'slug': slider.slug}) }}" class="btn btn-outline-primary">Voir le slide</a>
+                                {% if (slider.statut) %}
+                                    <a href="#" class="btn btn-success" title="Actif"><i class="fa fa-check-square-o"></i> </a>
+                                {% else %}
+                                    <a href="#" class="btn btn-danger" title="Desactivé"><i class="fa fa-chain-broken"></i> </a>
+                                {% endif %}
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Publié le {{ slider.publieLe|date('d-m-Y H:i:s') }} par {{ slider.publiePar }}</small>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </main>
+{% endblock %}
