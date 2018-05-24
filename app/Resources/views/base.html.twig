@@ -1,13 +1,265 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html dir="ltr" lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <title>{% block title %}Fondation j'Adore Treichville{% endblock %}</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/favicon.png') }}" />
+
+    {% block stylesheets %}
+        <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('frontend/css/jquery-ui.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('frontend/css/animate.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('frontend/css/css-plugin-collections.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('frontend/css/menuzord-megamenu.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('frontend/css/menuzord-skins/menuzord-boxed.css') }}" id="menuzord-menu-skins" rel="stylesheet"/>
+        <link href="{{ asset('frontend/css/style-main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('frontend/css/preloader.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('frontend/css/custom-bootstrap-margin-padding.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" type="text/css">
+
+        <link href="{{ asset('frontend/css/colors/theme-skin-color-set2.css') }}" rel="stylesheet" type="text/css">
+    {% endblock %}
+
+</head>
+<body class="has-side-panel side-panel-right fullwidth-page">
+<div id="wrapper">
+    <!-- preloader -->
+    <!--<div id="preloader">
+        <div id="spinner">
+            <div class="preloader-dot-loading">
+                <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Header -->
+    <header id="header" class="header modern-header modern-header-theme-colored2">
+        <div class="header-middle p-0 xs-text-center pb-30">
+            <div class="container pt-20 pb-20">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <a class="pull-left flip sm-pull-center mb-15" href="#"><img src="{{ asset('frontend/images/logo-fjt.jpg') }}" alt="Fondation j'Adore Treichville"></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-9">
+                        <div class="header-widget-contact-info-box sm-text-center">
+                            <img src="images/header-01.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-nav">
+            <div class="header-nav-wrapper navbar-scrolltofixed">
+                <div class="container">
+                    <nav id="menuzord" class="menuzord default">
+                        <ul class="menuzord-menu">
+                            <li class="active"><a href="#home">Home</a>
+                            <li ><a href="#home">Actualités</a>
+                            </li>
+                            <li><a href="#">La Fondation</a>
+                                <ul class="dropdown">
+                                    {{ render(url('frontend_menu_fondation')) }}
+                                </ul>
+                            </li>
+                            <li><a href="#">Plan d'actions</a>
+                                <ul class="dropdown">
+                                    {{ render(url('frontend_menu_plan')) }}
+                                </ul>
+                            </li>
+                            <li><a href="#">Treich En Joie</a>
+                                <ul class="dropdown">
+                                    {{ render(url('frontend_menu_treichenjoie')) }}
+                                </ul>
+                            </li>
+                            <li><a href="#">Médiathèque</a>
+                                <ul class="dropdown">
+                                    <li><a href="#">Etoile Culinaire</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">2017</a></li>
+                                            <li><a href="#">2016</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Tournoi de maracana</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">2017</a></li>
+                                            <li><a href="#">2016</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Concert Live</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">2017</a></li>
+                                            <li><a href="#">2016</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Noël pour tous</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">2017</a></li>
+                                            <li><a href="#">2016</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        {% block body %}
+
+        {% endblock %}
+
+    </div>
+    <!-- end main-content -->
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container pt-70 pb-40">
+            <div class="row border-bottom-black">
+                <div class="col-sm-7 col-md-4">
+                    <div class="widget dark">
+                        <img class="mt-10 mb-20" alt="" src="images/logo-fjt2.jpg">
+                        <p>Treichville Avenue 21 rue 38B, Face Eglise Notre Dame, Abidjan - Côte d'Ivoire</p>
+                        <ul class="list-inline mt-5">
+                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray" href="#">+225 21 35 58 33</a> </li>
+                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a class="text-gray" href="#">info@fondationjadore.treichville.org</a> </li>
+                            <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray" href="#">http://fondationjadore.treichville.org</a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-5 col-md-2">
+                    <div class="widget dark">
+                        <h4 class="widget-title">Rubriques</h4>
+                        <ul class="list-border">
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Actualités</a></li>
+                            <li><a href="#">Médiathèque</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="widget dark">
+                        <h4 class="widget-title">La Fondation</h4>
+                        <ul class="list-border">
+                            <li><a href="#">Présentation</a></li>
+                            <li><a href="#">But</a></li>
+                            <li><a href="#">Mission assignée</a></li>
+                            <li><a href="#">Stratégie</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="widget dark">
+                        <h4 class="widget-title">Treich En Joie</h4>
+                        <div class="categories">
+                            <ul class="list-border">
+                                <li><a href="#">Etoile Culinaire</a></li>
+                                <li><a href="#">Tournoi de maracana</a></li>
+                                <li><a href="#">Concert Live</a></li>
+                                <li><a href="#">Noël pour tous</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-10">
+                <div class="col-md-5">
+                    <div class="widget dark">
+                        <h5 class="widget-title mb-10">Newsletter</h5>
+                        <!-- Mailchimp Subscription Form Starts Here -->
+                        <form id="mailchimp-subscription-form-footer" class="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" value="" name="EMAIL" placeholder="Votre adresse Email" class="form-control input-lg font-16" data-height="45px" id="mce-EMAIL-footer">
+                                <span class="input-group-btn">
+                  <button data-height="45px" class="btn btn-colored btn-theme-colored btn-xs m-0 font-14" type="submit">S'inscrire</button>
+                </span>
+                            </div>
+                        </form>
+                        <!-- Mailchimp Subscription Form Validation-->
+                        <script>
+                            $('#mailchimp-subscription-form-footer').ajaxChimp({
+                                callback: mailChimpCallBack,
+                                url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;id=49d6d30e1e'
+                            });
+
+                            function mailChimpCallBack(resp) {
+                                // Hide any previous response text
+                                var $mailchimpform = $('#mailchimp-subscription-form-footer'),
+                                    $response = '';
+                                $mailchimpform.children(".alert").remove();
+                                if (resp.result === 'success') {
+                                    $response = '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                                } else if (resp.result === 'error') {
+                                    $response = '<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + resp.msg + '</div>';
+                                }
+                                $mailchimpform.prepend($response);
+                            }
+                        </script>
+                        <!-- Mailchimp Subscription Form Ends Here -->
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-1">
+                    <div class="widget dark">
+                        <h5 class="widget-title mb-10">Nous joindre</h5>
+                        <div class="text-gray">
+                            +225 00 00 00 00 <br>
+                            +225 00 00 00 00
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget dark">
+                        <h5 class="widget-title mb-10">Nous suivre</h5>
+                        <ul class="styled-icons icon-dark icon-circled icon-sm">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom bg-black-444">
+            <div class="container pt-10 pb-10">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="font-13 text-black-777 m-0">Copyright &copy;2018 FONDATION J'ADORE TREICHVILLE. Tous droits réservés</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+</div>
+
+    {% block javascripts %}
+
+        <script src="{{ asset('frontend/js/jquery-2.2.4.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/jquery-plugin-collection.js') }}"></script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="{{ asset('frontend/js/custom.js') }}"></script>
+    {% endblock %}
+
+</body>
+
 </html>

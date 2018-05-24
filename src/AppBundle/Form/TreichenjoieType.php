@@ -42,6 +42,13 @@ class TreichenjoieType extends AbstractType
                     'style' => 'color: #666'
                 )
             ))
+            ->add('icon', TextType::class, array(
+                'attr' => array(
+                    'class' => 'form-control',
+                    'autocomplete'  => 'off',
+                    'placeholder'   => 'Icone'
+                )
+            ))
             ->add('statut', CheckboxType::class, array(
                 'attr'  => array(
                     'class' => 'custom-control-input'

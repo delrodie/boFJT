@@ -515,4 +515,28 @@ class Plan
     {
         return $this->rubrique;
     }
+
+    /**
+     * Set icon
+     *
+     * @param string $icon
+     *
+     * @return Plan
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Get icon
+     *
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
 }

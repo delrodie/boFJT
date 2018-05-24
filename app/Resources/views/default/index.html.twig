@@ -5,20 +5,364 @@
 {% endblock %}
 
 {% block body %}
-    <div id="wrapper">
-        <div id="container">
-
-
-            <div id="next">
-                <h2>Fondation J'adore Treichville</h2>
-                <p>
-                    <a href="{{ path('backend') }}">
-                        Espace administrateur
-                    </a>
-                </p>
-            </div>
-
+    <section id="home" class="divider">
+        <div class="container-fluid p-0">
+                <div id="rev_slider_home_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="news-gallery34" style="margin:0px auto;background-color:#ffffff;padding:0px;margin-top:0px;margin-bottom:0px;">
+                    <!-- START REVOLUTION SLIDER 5.0.7 fullwidth mode -->
+                    <div id="rev_slider_home" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
+                        <ul>
+                            {% for slider in sliders %}
+                                <!-- SLIDE 1 -->
+                                <li data-index="rs-{{ loop.index }}" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{{ vich_uploader_asset(slider, 'imageFile') }}" data-rotate="0"  data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="{{ slider.titre }}">
+                                    <img src="{{ vich_uploader_asset(slider, 'imageFile') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                    <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0"
+                                         id="slide-{{ loop.index }}-layer-1"
+                                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                                         data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']"
+                                         data-width="full"
+                                         data-height="full"
+                                         data-whitespace="normal"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+                                         data-transform_out="opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                                         data-start="1000"
+                                         data-basealign="slide"
+                                         data-responsive_offset="on"
+                                         style="z-index: 5;background-color:rgba(0, 0, 0, 0.35);border-color:rgba(0, 0, 0, 1.00);">
+                                    </div>
+                                    <!-- LAYER NR. 2 -->
+                                    <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0"
+                                         id="slide-{{ loop.index }}-layer-2"
+                                         data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+                                         data-y="['top','top','top','top']" data-voffset="['170','100','70','90']"
+                                         data-fontsize="['56','46','40','36']"
+                                         data-lineheight="['70','60','50','45']"
+                                         data-fontweight="['800','700','700','700']"
+                                         data-width="['700','650','600','420']"
+                                         data-height="none"
+                                         data-whitespace="normal"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                         data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                         data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+                                         data-start="1000"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;"> <span class="text-theme-colored"><br></span>  <span class="text-theme-colored">{{ slider.titre }}</span>
+                                    </div>
+                                    <!-- LAYER NR. 3 -->
+                                    <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0"
+                                         id="slide-{{ loop.index }}-layer-3"
+                                         data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+                                         data-y="['top','top','top','top']" data-voffset="['320','220','180','180']"
+                                         data-fontsize="['18','18','16','13']"
+                                         data-lineheight="['30','30','28','25']"
+                                         data-fontweight="['600','600','600','600']"
+                                         data-width="['700','650','600','420']"
+                                         data-height="none"
+                                         data-whitespace="nowrap"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                         data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                         data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+                                         data-start="1000"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         style="z-index: 7; white-space: nowrap;">{{ slider.description }}.
+                                    </div>
+                                    <!-- LAYER NR. 4 -->
+                                    <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0"
+                                         id="slide-{{ loop.index }}-layer-4"
+                                         data-x="['left','left','left','left']" data-hoffset="['53','53','53','30']"
+                                         data-y="['top','top','top','top']" data-voffset="['400','290','260','260']"
+                                         data-fontsize="['18','18','16','16']"
+                                         data-lineheight="['30','30','30','30']"
+                                         data-fontweight="['600','600','600','600']"
+                                         data-width="['700','650','600','420']"
+                                         data-height="none"
+                                         data-whitespace="nowrap"
+                                         data-transform_idle="o:1;"
+                                         data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+                                         data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+                                         data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+                                         data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+                                         data-start="1000"
+                                         data-splitin="none"
+                                         data-splitout="none"
+                                         data-responsive_offset="on"
+                                         style="z-index: 7; white-space: nowrap;">
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="tp-bannertimer tp-bottom" style="height: 5px; background-color: rgba(166, 216, 236, 1.00);"></div>
+                    </div>
+                </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Section: About -->
+    <section>
+        <div class="container pb-xs-30">
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4 col-md-6">
+                        {% for bienvenue in bienvenues %}
+                            <h2 class="mt-0">Mot de bienvenue du <span class="text-theme-colored">President</span></h2>
+                            <p class="mt-15">{{ bienvenue.resume|raw }}</p>
+                            <div><a href="#" class="btn btn-theme-colored mb-sm-30">Lire la suite</a></div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="box-hover-effect effect-barlin mb-xs-30">
+                            {% for presentation in presentations %}
+                                <div class="effect-wrapper">
+                                    <div class="thumb">
+                                        <img class="img-fullwidth" src="{{ vich_uploader_asset(presentation, 'imageFile') }}" alt="{{ presentation.titre }}">
+                                        <div class="overlay-shade bg-theme-colored-transparent-8"></div>
+                                    </div>
+                                    <div class="featured-content text-center pr-10 pl-10 pb-20 border-1px">
+                                        <h3 class="text-theme-colored">Qui sommes-nous?</h3>
+                                        <P class="text-justify">{{ presentation.resume|raw }}</P>
+                                        <a href="#" class="btn btn-sm btn-default">Lire la suite</a>
+                                    </div>
+                                    <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="box-hover-effect effect-barlin mb-xs-30">
+                            {% for mission in missions %}
+                                <div class="effect-wrapper">
+                                    <div class="thumb">
+                                        <img class="img-fullwidth" src="{{ vich_uploader_asset(mission, 'imageFile') }}" alt="{{ mission.titre }}">
+                                        <div class="overlay-shade bg-theme-colored-transparent-8"></div>
+                                    </div>
+                                    <div class="featured-content text-center pr-10 pl-10 pb-20 border-1px">
+                                        <h3 class="text-theme-colored">Notre mission</h3>
+                                        <P class="text-justify">{{ mission.resume|raw }}</P>
+                                        <a href="#" class="btn btn-sm btn-default">Lire la suite</a>
+                                    </div>
+                                    <a class="hover-link" data-lightbox-gallery="gallery1-link" href="https://placehold.it/280x380">View more</a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider: choose us -->
+    <section class="divider layer-overlay overlay-dark-9" data-background-ratio="0.5" data-bg-img="{{ asset('frontend/images/bg.jpg') }}">
+        <div class="container pt-80 pb-30">
+            <div class="section-title text-center mb-50">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h2 class="text-uppercase mt-0 line-height-1 text-white">
+                            <span class="text-theme-colored">Treich En Joie</span> </h2>
+                        <p class="text-white">
+                            Treich en Joie est un ensemble d'activités consistant à reunir plus de 10.000 personnes (jeunes femmes et hommes) du District d'Abidjan
+                            autour d'un idéal qu'est la fraternité et l'amour. Parmis ces activités nous pouvons citer entre autres :
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="row">
+                    {% for treichenjoie in treichenjoies %}
+                        <div class="col-xs-12 col-sm-4 col-md-6">
+                            <div class="icon-box icon-left mb-50">
+                                <a class="icon icon-lg pull-left mr-0 flip" href="#">
+                                    <i class="fa {{ treichenjoie.icon }} text-theme-colored line-height-1"></i>
+                                </a>
+                                <h4 class="icon-box-title mb-5 text-white mt-0 line-height-1">{{ treichenjoie.titre }}</h4>
+                                <p class="text-white-f3">{{ treichenjoie.resume|raw }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: blog -->
+    <section id="blog" class="bg-silver-light">
+        <div class="container pb-30">
+            <div class="section-title text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="text-uppercase line-height-1 mt-0">Actualités</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for actualite in actualites %}
+                            <div class="col-xs-12 col-sm-6 col-md-4">
+                                <article class="post clearfix bg-white mb-30 border-1px pb-15">
+                                    <div class="entry-header-new">
+                                        <div class="post-thumb thumb"> <img src="{{ vich_uploader_asset(actualite, 'imageFile') }}" alt="{{ actualite.titre }}" class="img-responsive img-fullwidth"> </div>
+                                        <div class="entry-meta meta-absolute text-center p-10">
+                                            <div class="display-table">
+                                                <div class="display-table-cell">
+                                                    <ul>
+                                                        <li><a href="#" class="text-white">{{ actualite.publiele|date('M') }}</a></li>
+                                                        <li><a href="#" class="text-white">{{ actualite.publiele|date('d') }}</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <h3 class="entry-title mt-0 pt-0"><a href="#">{{ actualite.titre }}</a></h3>
+                                        <p class="mb-15 mt-15 font-13 pr-15 pl-15 text-justify">
+                                            {{ actualite.resume|raw }}
+                                        </p>
+                                        <a class="mt-0 text-theme-colored2" href="#">Lire la suite <i class="fa fa-angle-double-right"></i></a>
+                                    </div>
+                                </article>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 {% endblock %}
+
+{% block stylesheets %}
+        {{ parent() }}
+        <link  href="{{ asset('frontend/js/revolution-slider/css/settings.css') }}" rel="stylesheet" type="text/css"/>
+        <link  href="{{ asset('frontend/js/revolution-slider/css/layers.css') }}" rel="stylesheet" type="text/css"/>
+        <link  href="{{ asset('frontend/js/revolution-slider/css/navigation.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block javascripts %}
+        {{ parent() }}
+        <script src="{{ asset('frontend/js/revolution-slider/js/jquery.themepunch.tools.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/jquery.themepunch.revolution.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.actions.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.migration.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+        <script src="{{ asset('frontend/js/revolution-slider/js/extensions/revolution.extension.video.min.js') }}"></script>
+
+        <!-- END REVOLUTION SLIDER -->
+        <script>
+            var tpj=jQuery;
+            var revapi34;
+            tpj(document).ready(function() {
+                if(tpj("#rev_slider_home").revolution == undefined){
+                    revslider_showDoubleJqueryError("#rev_slider_home");
+                }else{
+                    revapi34 = tpj("#rev_slider_home").show().revolution({
+                        sliderType:"standard",
+                        jsFileLocation:"js/revolution-slider/js/",
+                        sliderLayout:"fullwidth",
+                        dottedOverlay:"none",
+                        delay:9000,
+                        navigation: {
+                            keyboardNavigation:"on",
+                            keyboard_direction: "horizontal",
+                            mouseScrollNavigation:"off",
+                            onHoverStop:"on",
+                            touch:{
+                                touchenabled:"on",
+                                swipe_threshold: 75,
+                                swipe_min_touches: 1,
+                                swipe_direction: "horizontal",
+                                drag_block_vertical: false
+                            }
+                            ,
+                            arrows: {
+                                style:"zeus",
+                                enable:true,
+                                hide_onmobile:true,
+                                hide_under:600,
+                                hide_onleave:true,
+                                hide_delay:200,
+                                hide_delay_mobile:1200,
+                                tmp:'<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div> </div>',
+                                left: {
+                                    h_align:"left",
+                                    v_align:"center",
+                                    h_offset:30,
+                                    v_offset:0
+                                },
+                                right: {
+                                    h_align:"right",
+                                    v_align:"center",
+                                    h_offset:30,
+                                    v_offset:0
+                                }
+                            },
+                            bullets: {
+                                enable:true,
+                                hide_onmobile:true,
+                                hide_under:600,
+                                style:"metis",
+                                hide_onleave:true,
+                                hide_delay:200,
+                                hide_delay_mobile:1200,
+                                direction:"horizontal",
+                                h_align:"center",
+                                v_align:"bottom",
+                                h_offset:0,
+                                v_offset:30,
+                                space:5,
+                                tmp:'<span class="tp-bullet-img-wrap"><span class="tp-bullet-image"></span></span>'
+                            }
+                        },
+                        viewPort: {
+                            enable:true,
+                            outof:"pause",
+                            visible_area:"80%"
+                        },
+                        responsiveLevels:[1240,1024,778,480],
+                        gridwidth:[1240,1024,778,480],
+                        gridheight:[730,550,500,450],
+                        lazyType:"none",
+                        parallax: {
+                            type:"scroll",
+                            origo:"enterpoint",
+                            speed:400,
+                            levels:[5,10,15,20,25,30,35,40,45,50],
+                        },
+                        shadow:0,
+                        spinner:"off",
+                        stopLoop:"off",
+                        stopAfterLoops:-1,
+                        stopAtSlide:-1,
+                        shuffle:"off",
+                        autoHeight:"off",
+                        hideThumbsOnMobile:"off",
+                        hideSliderAtLimit:0,
+                        hideCaptionAtLimit:0,
+                        hideAllCaptionAtLilmit:0,
+                        debugMode:false,
+                        fallbacks: {
+                            simplifyAll:"off",
+                            nextSlideOnWindowFocus:"off",
+                            disableFocusListener:false,
+                        }
+                    });
+                }
+            }); /*ready*/
+        </script>
+        <!-- END REVOLUTION SLIDER -->
+{% endblock %}
+
+
 

@@ -25,7 +25,13 @@ class PresentationType extends AbstractType
                     'placeholder'   => 'Titre de l\'article'
                 )
             ))
-            //->add('resume', TextareaType::class)
+            ->add('rubrique', TextType::class, array(
+                'attr' => array(
+                    'class' => 'form-control',
+                    'autocomplete'  => 'off',
+                    'placeholder'   => 'rubrique'
+                )
+            ))
             ->add('contenu', TextareaType::class)
             ->add('motcle', TextType::class, array(
                 'attr' => array(

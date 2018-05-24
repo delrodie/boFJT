@@ -10,4 +10,19 @@ namespace AppBundle\Repository;
  */
 class PresentationRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Liste des articles de presentation
+     */
+    public function findPresentation($slug, $limit, $offset)
+    {
+        return $q = $this->createQueryBuilder('p')
+                         ->where('p.rubrique LIKE :slug')
+                         ->andWhere('p.statut = 1')
+                         ->orderBy('p.id', 'DESC')
+                         ->setFirstResult($offset)
+                         ->setMaxResults($limit)
+                         ->setParameter('slug', '%'.$slug.'%')
+                         ->getQuery()->getResult()
+            ;
+    }
 }

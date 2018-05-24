@@ -35,6 +35,13 @@ class Presentation
     /**
      * @var string
      *
+     * @ORM\Column(name="rubrique", type="string", length=255)
+     */
+    private $rubrique;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="resume", type="text")
      */
     private $resume;
@@ -483,5 +490,29 @@ class Presentation
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+
+    /**
+     * Set rubrique
+     *
+     * @param string $rubrique
+     *
+     * @return Presentation
+     */
+    public function setRubrique($rubrique)
+    {
+        $this->rubrique = $rubrique;
+
+        return $this;
+    }
+
+    /**
+     * Get rubrique
+     *
+     * @return string
+     */
+    public function getRubrique()
+    {
+        return $this->rubrique;
     }
 }

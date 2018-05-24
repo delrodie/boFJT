@@ -61,6 +61,13 @@ class Treichenjoie
     private $motcle;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="icon", type="string", length=255)
+     */
+    private $icon;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="statut", type="boolean", nullable=true)
@@ -514,5 +521,29 @@ class Treichenjoie
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+
+    /**
+     * Set icon
+     *
+     * @param string $icon
+     *
+     * @return Treichenjoie
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Get icon
+     *
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->icon;
     }
 }
