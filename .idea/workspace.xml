@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded1b855-8251-4464-ac5a-36c37db26beb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/default/menu_plan.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/frontend/plan.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/default/menu_treichenjoie.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" afterDir="false" />
     </list>
@@ -73,7 +74,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="332">
-              <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+              <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
               </folding>
@@ -84,8 +85,8 @@
       <file leaf-file-name="FrontendController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="436">
+              <caret line="53" column="51" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="51" />
               <folding>
                 <element signature="e#40#99#0#PHP" expanded="true" />
               </folding>
@@ -122,20 +123,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu_plan.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/menu_plan.html.twig">
+      <file leaf-file-name="menu_treichenjoie.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/default/menu_treichenjoie.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="25">
+              <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plan.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="plan.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/plan.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="199" selection-start-line="199" selection-end-line="199" />
+            <state relative-caret-position="3672">
+              <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
               <folding>
                 <element signature="e#5398#5426#0#HTML" expanded="true" />
               </folding>
@@ -143,14 +144,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="presentation.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/presentation.html.twig">
+      <file leaf-file-name="treichenjoie.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="200" column="14" lean-forward="true" selection-start-line="140" selection-end-line="200" selection-end-column="14" />
+            <state relative-caret-position="475">
+              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
               <folding>
-                <element signature="e#5442#5470#0#HTML" expanded="true" />
-                <element signature="e#8168#11367#0#Twig" />
+                <element signature="e#5470#5498#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -169,21 +169,21 @@
     <findStrings>
       <find>article</find>
       <find>plans</find>
-      <find>presentation</find>
       <find>plan</find>
       <find>regionale</find>
       <find>scoutascci</find>
       <find>fo_presentation</find>
+      <find>presentation</find>
     </findStrings>
     <replaceStrings>
-      <replace>plan</replace>
       <replace>activiteactivit</replace>
       <replace>activités</replace>
       <replace>actualite</replace>
-      <replace>treichenjoie</replace>
       <replace>presentation</replace>
       <replace>fondationjadore.treichville</replace>
       <replace>frontend_fondation</replace>
+      <replace>plan</replace>
+      <replace>treichenjoie</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -192,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/presentation/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PresentationController.php" />
@@ -238,10 +237,12 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/menu_fondation.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/frontend/presentation.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/menu_plan.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/frontend/plan.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/default/menu_treichenjoie.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig" />
       </list>
     </option>
   </component>
@@ -471,12 +472,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526991107906</updated>
       <workItem from="1526991146027" duration="24705000" />
-      <workItem from="1527094405872" duration="25905000" />
+      <workItem from="1527094405872" duration="27814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50610000" />
+    <option name="totallyTimeSpent" value="52519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -533,20 +534,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/treichenjoie/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="49" column="54" selection-start-line="49" selection-start-column="54" selection-end-line="49" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/treichenjoie/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/presentation/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -888,10 +875,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/plan.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3672">
+          <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
+          <folding>
+            <element signature="e#5398#5426#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/menu_plan.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/menu_treichenjoie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
-          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
+          <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
           </folding>
@@ -900,25 +911,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="436">
+          <caret line="53" column="51" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="51" />
           <folding>
             <element signature="e#40#99#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/default/menu_plan.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/presentation.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
-          <caret line="200" column="14" lean-forward="true" selection-start-line="140" selection-end-line="200" selection-end-column="14" />
+          <caret line="200" column="14" selection-start-line="140" selection-end-line="200" selection-end-column="14" />
           <folding>
             <element signature="e#5442#5470#0#HTML" expanded="true" />
             <element signature="e#8168#11367#0#Twig" />
@@ -926,12 +930,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/plan.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="199" selection-start-line="199" selection-end-line="199" />
+        <state relative-caret-position="475">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
-            <element signature="e#5398#5426#0#HTML" expanded="true" />
+            <element signature="e#5470#5498#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

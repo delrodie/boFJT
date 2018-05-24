@@ -1,0 +1,201 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+{{ treichenjoie.titre }}
+{% endblock %}
+
+{% block body %}
+    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="{{ asset('frontend/images/bg.jpg') }}">
+        <div class="container pt-60 pb-30">
+            <!-- Section Content -->
+            <div class="section-content">
+                <div class="row">
+                    <div class="col-md-12 text-left">
+                        <h2 class="title"></h2>
+                        <ol class="breadcrumb text-left text-black mt-10">
+                            <li><a href="{{ path('homepage') }}">Home</a></li>
+                            <li><a href="#">Fondation</a></li>
+                            <li class="active text-theme-colored">{{ treichenjoie.rubrique }}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Blog -->
+    <section>
+        <div class="container mt-30 mb-30 pt-30 pb-30">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="blog-posts single-post">
+                        <article class="post clearfix mb-0">
+                            <div class="entry-header">
+                                <div class="post-thumb thumb"> <img src="{{ vich_uploader_asset(treichenjoie, 'imageFile') }}" alt="{{ treichenjoie.titre }}" class="img-responsive img-fullwidth"> </div>
+                            </div>
+                            <div class="entry-content">
+                                <div class="entry-meta media no-bg no-border mt-15 pb-20">
+                                    <div class="entry-date media-left text-center flip bg-theme-colored pt-5 pr-15 pb-5 pl-15">
+                                        <ul>
+                                            <li class="font-16 text-white font-weight-600">{{ treichenjoie.publiele|date('d') }}</li>
+                                            <li class="font-12 text-white text-uppercase">{{ treichenjoie.publiele|date('M') }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="media-body pl-15">
+                                        <div class="event-content pull-left flip">
+                                            <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="#">{{ treichenjoie.titre }}</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="mb-15">
+                                    {{ treichenjoie.contenu|raw }}
+                                </p>
+
+                                <div class="mt-30 mb-0">
+                                    <h5 class="pull-left flip mt-10 mr-20 text-theme-colored">Partage:</h5>
+                                    <ul class="styled-icons icon-circled m-0">
+                                        <li><a href="https://www.facebook.com/fondationjadore.treichville/" data-bg-color="#3A5795"><i class="fa fa-facebook text-white"></i></a></li>
+                                        <li><a href="#" data-bg-color="#55ACEE"><i class="fa fa-twitter text-white"></i></a></li>
+                                        <li><a href="#" data-bg-color="#A11312"><i class="fa fa-google-plus text-white"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        <div class="tagline p-0 pt-20 mt-5">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="tags">
+                                        <p class="mb-0"><i class="fa fa-tags text-theme-colored"></i> <span>Mots clés:</span>
+                                            {% for tag in treichenjoie.motcle|split(',') %}
+                                                <a href="#"> {{ tag }}</a>,
+                                            {% endfor %}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="author-details media-post">
+                            <!--<img src="images/header-01.png">-->
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="comments" class="comments-area pt-50">
+
+                            <!-- Facebook Comments plugin -->
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "../../../../../../../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=409125935834772";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+
+                            <h3 id="comments-title">
+                                <div style="margin-bottom: 30px;">
+                                    <div class="fb-comments" data-href="http://fondationjadore.treichville.org{{ path('frontend_fondation', {'slug': treichenjoie.slug})}}" data-width="750" data-numposts="5"></div>
+                                </div>
+                            </h3>
+
+                            <!-- Facebook Comments end -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="sidebar sidebar-right mt-sm-30">
+                        <div class="widget">
+                            <!--<img src="images/bg/bg2.jpg">-->
+                        </div>
+                        <div class="widget">
+                            <h4 class="widget-title">Nous suivre</h4>
+                            <div class="categories">
+                                <ul class="styled-icons icon-circled m-0">
+                                    <li><a href="https://www.facebook.com/fondationjadore.treichville/" data-bg-color="#3A5795"><i class="fa fa-facebook text-white"></i></a></li>
+                                    <li><a href="#" data-bg-color="#55ACEE"><i class="fa fa-twitter text-white"></i></a></li>
+                                    <li><a href="#" data-bg-color="#55ACEE"><i class="fa fa-instagram text-white"></i></a></li>
+                                    <li><a href="#" data-bg-color="#A11312"><i class="fa fa-google-plus text-white"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="widget">
+                            <h4 class="widget-title">Actualités</h4>
+                            <div class="facebook">
+
+                                <div class="fb-page" data-href="https://www.facebook.com/fondationjadore.treichville/" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="true">
+                                    <div class="fb-xfbml-parse-ignore">
+                                        <blockquote cite="https://www.facebook.com/fondationjadore.treichville/">
+                                            <a href="https://www.facebook.com/fondationjadore.treichville/">FONDATION J'ADORE TREICHVILLE</a>
+                                        </blockquote>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block meta %}
+    <meta name="keywords" content="{% for tag in treichenjoie.motcle|split(',') %}{{ tag }}, {% endfor %}"  />
+    <meta name="description" content="{{ treichenjoie.resume|raw }}" />
+    <meta name="revisit" content="7 days" />
+    <meta name="revisit-after" content="7 days">
+    <meta name="Author" content="AFRICAN HOUSE OF, {{ treichenjoie.publiePar|title }}">
+    <meta name="Copyright" content="treichville.org">
+    <meta name="Content-Language" content="FR">
+    <meta name="distribution" content="global" />
+    <meta name="Audience" content="All" />
+    <meta name="Robots" content="full">
+
+    <link rel="canonical" href="http://fondationjadore.treichville.org{{ path('frontend_fondation', {'slug': treichenjoie.slug})}}" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:type" content="Item" />
+    <meta property="og:title" content="{{ treichenjoie.titre }}" />
+    <meta property="og:description" content="{{ treichenjoie.resume|raw }} " />
+    <meta property="og:url" content="http://fondationjadore.treichville.org{{ path('frontend_fondation', {'slug': treichenjoie.slug})}}" />
+    <meta property="og:site_name" content="FONDATION J'ADORE TREICHVILLE" />
+    <meta property="article:section" content="Item" />
+    <meta property="article:published_time" content="{{ treichenjoie.publieLe|date('Y-m-d')}}T{{ treichenjoie.publieLe|date('H:i:s')}}+00:00" />
+    <meta property="article:modified_time" content="{{ treichenjoie.modifieLe|date('Y-m-d')}}T{{ treichenjoie.modifieLe|date('H:i:s')}}+00:00" />
+    <meta property="og:updated_time" content="{{ treichenjoie.modifieLe|date('Y-m-d')}}T{{ treichenjoie.modifieLe|date('H:i:s')}}+00:00" />
+    <meta property="og:image" content="http://fondationjadore.treichville.org{{ vich_uploader_asset(treichenjoie, 'imageFile') }}" />
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="{{ treichenjoie.resume|raw }}"/>
+    <meta name="twitter:title" content="{{ treichenjoie.titre }}"/>
+    <meta name="twitter:domain" content="FONDATION J'ADORE TREICHVILLE"/>
+    <meta name="twitter:image:src" content="http://fondationjadore.treichville.org{{ vich_uploader_asset(treichenjoie, 'imageFile') }}"/>
+    <script type="application/ld+json">
+    		{
+    		  "@context": "http://schema.org",
+    		  "@type": "NewsArticle",
+    		  "mainEntityOfPage": {
+    		    "@type": "WebPage",
+    		    "@id": "https://fondationjadore.treichville.org"
+    		  },
+    		  "headline": "{{ treichenjoie.titre }}",
+    		  "image": [
+    		    "http://fondationjadore.treichville.org{{ vich_uploader_asset(treichenjoie, 'imageFile') }}",
+    		    "http://fondationjadore.treichville.org{{ asset('frontend/images/logo-fjt.jpg') }}"
+    		   ],
+    		  "datePublished": "{{ treichenjoie.publieLe|date('Y-m-d')}}T{{ treichenjoie.publieLe|date('H:i:s')}}+00:00",
+    		  "dateModified": "{{ treichenjoie.modifieLe|date('Y-m-d')}}T{{ treichenjoie.modifieLe|date('H:i:s')}}+00:00",
+    		  "author": {
+    		    "@type": "Person",
+    		    "name": "Delrodie AMOIKON"
+    		  },
+    		   "publisher": {
+    		    "@type": "Organization",
+    		    "name": "{{ treichenjoie.titre }}",
+    		    "logo": {
+    		      "@type": "ImageObject",
+    		      "url": "http://fondationjadore.treichville.org{{ vich_uploader_asset(treichenjoie, 'imageFile') }}"
+    		    }
+    		  },
+    		  "description": "{{ treichenjoie.resume|raw }}"
+    		}
+    </script>
+{% endblock %}

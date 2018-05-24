@@ -77,7 +77,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $menus = $em->getRepository('AppBundle:Treichenjoie')->findBy(array('statut'=>1));
-        return $this->render('default/menu.html.twig', [
+        return $this->render('default/menu_treichenjoie.html.twig', [
             'menus' => $menus,
         ]);
     }

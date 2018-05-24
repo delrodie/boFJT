@@ -39,4 +39,20 @@ class FrontendController extends Controller
             'plan'  => $plan,
         ]);
     }
+
+    /**
+     * Details article plan d'action
+     *
+     * @Route("/treich-en-joie/{slug}", name="frontend_treichenjoie")
+     */
+    public function treichenjoieAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $treichenjoie = $em->getRepository('AppBundle:Treichenjoie')->findOneBy(array('slug' => $slug));
+        //dump($presentation);die();
+
+        return $this->render("frontend/treichenjoie.html.twig",[
+            'treichenjoie'  => $treichenjoie,
+        ]);
+    }
 }
