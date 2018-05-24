@@ -8,9 +8,68 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
+
+    {% block meta %}
+        <meta name="keywords" content="abidjan, treichville, fondation, j'adore, nzassa"  />
+        <meta name="description" content="{{ presentation.resume|raw }}" />
+        <meta name="revisit" content="7 days" />
+        <meta name="revisit-after" content="7 days">
+        <meta name="Author" content="Delrodie AMOIKON">
+        <meta name="Copyright" content="treichville.org">
+        <meta name="Content-Language" content="FR">
+        <meta name="distribution" content="global" />
+        <meta name="Audience" content="All" />
+        <meta name="Robots" content="full">
+
+        <link rel="canonical" href="http://fondationjadore.treichville.org" />
+        <meta property="og:locale" content="fr_FR" />
+        <meta property="og:type" content="Item" />
+        <meta property="og:title" content="Fondation j'Adore Treichville" />
+        <meta property="og:description" content="" />
+        <meta property="og:url" content="http://fondationjadore.treichville.org" />
+        <meta property="og:site_name" content="FONDATION J'ADORE TREICHVILLE" />
+        <meta property="article:section" content="Item" />
+        <meta property="article:published_time" content="2018-05-25T00:00:00+00:00" />
+        <meta property="article:modified_time" content="2018-05-25T00:00:00+00:00" />
+        <meta property="og:updated_time" content="2018-05-25T00:00:00+00:00" />
+        <meta property="og:image" content="http://fondationjadore.treichville.org{{ asset('frontend/images/logo-fjt.jpg') }}" />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:description" content=""/>
+        <meta name="twitter:title" content="Fondation j'Adore Treichville"/>
+        <meta name="twitter:domain" content="FONDATION"/>
+        <meta name="twitter:image:src" content="http://fondationjadore.treichville.org{{ asset('frontend/images/logo-fjt.jpg') }}"/>
+        <script type="application/ld+json">
+    		{
+    		  "@context": "http://schema.org",
+    		  "@type": "NewsArticle",
+    		  "mainEntityOfPage": {
+    		    "@type": "WebPage",
+    		    "@id": "https://fondationjadore.treichville.org"
+    		  },
+    		  "headline": "Fondation j'Adore Treichville",
+    		  "image": [
+    		    "http://fondationjadore.treichville.org{{ asset('frontend/images/logo-fjt.jpg') }}",
+    		    "http://fondationjadore.treichville.org{{ asset('frontend/images/logo-fjt.jpg') }}"
+    		   ],
+    		  "datePublished": "2018-05-25T00:00:00+00:00",
+    		  "dateModified": "2018-05-25T00:00:00+00:00",
+    		  "author": {
+    		    "@type": "Person",
+    		    "name": "Delrodie AMOIKON"
+    		  },
+    		   "publisher": {
+    		    "@type": "Organization",
+    		    "name": "Fondation j'Adore Treichville",
+    		    "logo": {
+    		      "@type": "ImageObject",
+    		      "url": "http://fondationjadore.treichville.org{{ asset('frontend/images/logo-fjt.jpg') }}"
+    		    }
+    		  },
+    		  "description": ""
+    		}
+    </script>
+    {% endblock %}
+
 
     <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/favicon.png') }}" />
 
