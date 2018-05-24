@@ -23,4 +23,20 @@ class FrontendController extends Controller
             'presentation'  => $presentation,
         ]);
     }
+
+    /**
+     * Details article plan d'action
+     *
+     * @Route("/plan-action/{slug}", name="frontend_plan")
+     */
+    public function planAction($slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $plan = $em->getRepository('AppBundle:Plan')->findOneBy(array('slug' => $slug));
+        //dump($presentation);die();
+
+        return $this->render("frontend/plan.html.twig",[
+            'plan'  => $plan,
+        ]);
+    }
 }

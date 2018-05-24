@@ -63,7 +63,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $menus = $em->getRepository('AppBundle:Plan')->findBy(array('statut'=>1));
-        return $this->render('default/menu.html.twig', [
+        return $this->render('default/menu_plan.html.twig', [
             'menus' => $menus,
         ]);
     }

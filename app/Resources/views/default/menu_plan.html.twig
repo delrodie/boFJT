@@ -1,0 +1,3 @@
+{% for menu in menus %}
+    <li><a href="{{ path('frontend_plan', {'slug': menu.slug}) }}">{{ menu.rubrique }}</a></li>
+{% endfor %}
