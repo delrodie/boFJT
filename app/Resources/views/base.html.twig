@@ -11,7 +11,7 @@
 
     {% block meta %}
         <meta name="keywords" content="abidjan, treichville, fondation, j'adore, nzassa"  />
-        <meta name="description" content="{{ presentation.resume|raw }}" />
+        <meta name="description" content="" />
         <meta name="revisit" content="7 days" />
         <meta name="revisit-after" content="7 days">
         <meta name="Author" content="Delrodie AMOIKON">
@@ -106,11 +106,11 @@
             <div class="container pt-20 pb-20">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-3">
-                        <a class="pull-left flip sm-pull-center mb-15" href="#"><img src="{{ asset('frontend/images/logo-fjt.jpg') }}" alt="Fondation j'Adore Treichville"></a>
+                        <a class="pull-left flip sm-pull-center mb-15" href="{{ path('homepage') }}"><img src="{{ asset('frontend/images/logo-fjt.jpg') }}" alt="Fondation j'Adore Treichville"></a>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-9">
                         <div class="header-widget-contact-info-box sm-text-center">
-                            <img src="images/header-01.png">
+                            <!--<img src="images/header-01.png">-->
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                 <div class="container">
                     <nav id="menuzord" class="menuzord default">
                         <ul class="menuzord-menu">
-                            <li class="active"><a href="#home">Home</a>
+                            <li class="active"><a href="{{ path('homepage') }}">Home</a>
                             <li ><a href="#home">Actualités</a>
                             </li>
                             <li><a href="#">La Fondation</a>

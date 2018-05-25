@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ded1b855-8251-4464-ac5a-36c37db26beb" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/default/menu_treichenjoie.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -57,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+            <state relative-caret-position="291">
+              <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
               <folding>
                 <element signature="e#134#141#1" expanded="true" />
                 <element signature="e#133#140#1" expanded="true" />
@@ -144,7 +140,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="treichenjoie.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="treichenjoie.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
@@ -236,13 +232,13 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/menu_fondation.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/frontend/presentation.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/menu_plan.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/frontend/plan.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/menu_treichenjoie.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/FrontendController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/frontend/treichenjoie.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -472,12 +468,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526991107906</updated>
       <workItem from="1526991146027" duration="24705000" />
-      <workItem from="1527094405872" duration="27814000" />
+      <workItem from="1527094405872" duration="28973000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52519000" />
+    <option name="totallyTimeSpent" value="53678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -825,17 +821,6 @@
     <entry file="file://$PROJECT_DIR$/web/frontend/images/logo-fjt.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <element signature="e#134#141#1" expanded="true" />
-            <element signature="e#133#140#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -936,6 +921,17 @@
           <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
           <folding>
             <element signature="e#5470#5498#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="112" column="32" selection-start-line="112" selection-start-column="32" selection-end-line="112" selection-end-column="32" />
+          <folding>
+            <element signature="e#134#141#1" expanded="true" />
+            <element signature="e#133#140#1" expanded="true" />
           </folding>
         </state>
       </provider>
